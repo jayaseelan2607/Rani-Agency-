@@ -7,16 +7,52 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #f0f4f8; color: #222; line-height: 1.6; }
-        .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 28px 18px; text-align: center; }
-        .header h1 { font-size: 2.3rem; margin-bottom: 6px; }
-        .header .tagline { font-size: 1rem; background: #ffd700; color: #1a3a6e; display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin: 10px 0; }
-        .header .contacts { margin-top: 14px; font-size: 1.05rem; white-space: nowrap; overflow-x: auto; }
+        
+        .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 26px 16px; text-align: center; }
+        
+        .brand { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+        
+        /* Exact style Logo */
+        .logo {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(145deg, #1565C0, #0D47A1);
+            clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+        }
+        .logo::before {
+            content: "";
+            position: absolute;
+            top: -18px;
+            width: 42px;
+            height: 22px;
+            background: #1565C0;
+            clip-path: polygon(10% 100%, 0% 40%, 20% 60%, 35% 0%, 50% 45%, 65% 0%, 80% 60%, 100% 40%, 90% 100%);
+        }
+        .logo span {
+            color: white;
+            font-size: 34px;
+            font-weight: 900;
+            font-family: Arial Black, Arial, sans-serif;
+            line-height: 1;
+            margin-top: 4px;
+        }
+        
+        .header h1 { font-size: 2.2rem; margin: 0; line-height: 1.2; }
+        .header .tagline { font-size: 1rem; background: #ffd700; color: #1a3a6e; display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin: 12px 0 8px; }
+        .header .contacts { margin-top: 12px; font-size: 1.05rem; white-space: nowrap; overflow-x: auto; }
         .header .contacts a { color: #ffd700; text-decoration: none; font-weight: bold; }
-        .header .people { margin-top: 16px; font-size: 0.95rem; }
+        .header .people { margin-top: 14px; font-size: 0.95rem; }
         .header .people span { display: block; margin: 3px 0; }
+        
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         .card { background: white; border-radius: 12px; padding: 22px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .card h2 { color: #1a3a6e; margin-bottom: 14px; font-size: 1.4rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 7px; }
+        
         .price-title { text-align: center; margin: 8px 0 16px; }
         .price-title .offer { background: #e8f5e9; color: #2e7d32; font-weight: 600; padding: 8px 12px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px; display: inline-block; }
         .price-title h3 { color: #1a3a6e; font-size: 1.15rem; margin-top: 6px; }
@@ -41,18 +77,27 @@
 
         @media (max-width: 480px) {
             .header .contacts, .contact-bottom .numbers { font-size: 0.95rem; }
-            .header h1 { font-size: 1.9rem; }
+            .header h1 { font-size: 1.8rem; }
+            .logo { width: 58px; height: 58px; }
+            .logo span { font-size: 26px; }
+            .logo::before { top: -15px; width: 34px; height: 18px; }
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>ராணி ஏஜென்சி</h1>
+        <div class="brand">
+            <div class="logo"><span>R</span></div>
+            <h1>ராணி ஏஜென்சி</h1>
+        </div>
+        
         <div class="tagline">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div>
+        
         <div class="contacts">
             📞 <a href="tel:+918428029787">+91 84280 29787</a> &nbsp;|&nbsp; <a href="tel:+916385556428">+91 63855 56428</a>
         </div>
+        
         <div class="people">
             <span><strong>உரிமையாளர்:</strong> VijayAnthuvanRaj A</span>
             <span><strong>மேலாளர்:</strong> Josewajayaseelan J</span>
@@ -69,7 +114,6 @@
                 <h3>பொருள் விவரம் தெரிய பொருள் பெயரை தொடவும்</h3>
             </div>
 
-            <!-- Product 1 -->
             <div class="product-item">
                 <div class="product-header" onclick="toggleProduct(this)">
                     எம். சாண்ட் (M.Sand)
@@ -84,7 +128,6 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
             <div class="product-item">
                 <div class="product-header" onclick="toggleProduct(this)">
                     பி. சாண்ட் (P.Sand)
@@ -99,7 +142,6 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
             <div class="product-item">
                 <div class="product-header" onclick="toggleProduct(this)">
                     முக்கால் ஜல்லி (Jally)
@@ -114,7 +156,6 @@
                 </div>
             </div>
 
-            <!-- Product 4 -->
             <div class="product-item">
                 <div class="product-header" onclick="toggleProduct(this)">
                     செங்கல் (Bricks)
@@ -128,7 +169,6 @@
                 </div>
             </div>
 
-            <!-- Product 5 -->
             <div class="product-item">
                 <div class="product-header" onclick="toggleProduct(this)">
                     ஏ.சி. பிளாக் (ACC Block)
@@ -142,7 +182,6 @@
                 </div>
             </div>
 
-            <!-- Product 6 -->
             <div class="product-item">
                 <div class="product-header" onclick="toggleProduct(this)">
                     ஹாலோ பிளாக் (Hollow Blocks)
