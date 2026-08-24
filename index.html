@@ -7,27 +7,24 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #f0f4f8; color: #222; line-height: 1.6; }
-        .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 28px 20px; text-align: center; }
-        .header h1 { font-size: 2.4rem; margin-bottom: 6px; }
-        .header .tagline { font-size: 1.05rem; background: #ffd700; color: #1a3a6e; display: inline-block; padding: 6px 16px; border-radius: 20px; font-weight: bold; margin: 10px 0; }
-        .header .contacts { margin-top: 12px; font-size: 1.15rem; }
-        .header .contacts a { color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 8px; }
-        .header .people { margin-top: 18px; font-size: 0.95rem; opacity: 0.95; }
-        .header .people span { display: block; margin: 4px 0; }
+        .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 25px 20px; text-align: center; }
+        .header h1 { font-size: 2.3rem; margin-bottom: 5px; }
+        .header p { font-size: 1.1rem; opacity: 0.9; }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         .card { background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .card h2 { color: #1a3a6e; margin-bottom: 18px; font-size: 1.5rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 8px; }
+        .card h2 { color: #1a3a6e; margin-bottom: 15px; font-size: 1.5rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 8px; }
+        .people { display: flex; flex-wrap: wrap; gap: 20px; }
+        .person { flex: 1; min-width: 200px; background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 5px solid #1a3a6e; }
+        .person strong { display: block; color: #1a3a6e; margin-bottom: 4px; }
         .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
         .product { background: #e8f0fe; padding: 18px 12px; border-radius: 10px; text-align: center; }
         .product-name { font-weight: 700; color: #1a3a6e; margin-bottom: 6px; font-size: 1.05rem; }
         .product-price { color: #c0392b; font-weight: 600; font-size: 0.95rem; }
         .note { font-size: 0.85rem; color: #555; margin-top: 4px; }
-        .price-section { text-align: center; margin-top: 25px; padding-top: 15px; border-top: 1px dashed #ccc; }
-        .price-section h3 { color: #1a3a6e; font-size: 1.3rem; margin-bottom: 8px; }
-        .arrow { font-size: 2rem; color: #1a3a6e; display: block; margin: 5px 0; }
-        .contact-bottom { background: #1a3a6e; color: white; text-align: center; }
-        .contact-bottom a { color: #ffd700; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
-        .contact-bottom p { margin: 8px 0; }
+        .contact { background: #1a3a6e; color: white; text-align: center; }
+        .contact a { color: #ffd700; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+        .contact p { margin: 8px 0; }
+        .badge { display: inline-block; background: #ffd700; color: #1a3a6e; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin-top: 10px; }
         footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
     </style>
 </head>
@@ -35,21 +32,28 @@
 
     <div class="header">
         <h1>ராணி ஏஜென்சி</h1>
-        <div class="tagline">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div>
-        <div class="contacts">
-            📞 <a href="tel:+918428029787">+91 84280 29787</a> | 
-            <a href="tel:+916385556428">+91 63855 56428</a>
-        </div>
-        <div class="people">
-            <span><strong>உரிமையாளர்:</strong> VijayAnthuvanRaj A</span>
-            <span><strong>மேலாளர்:</strong> Josewajayaseelan J</span>
-        </div>
+        <p>Rani Agency</p>
+        <div class="badge">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div>
     </div>
 
     <div class="container">
 
         <div class="card">
-            <h2>கிடைக்கும் பொருட்கள்</h2>
+            <h2>உரிமையாளர் & மேலாளர்</h2>
+            <div class="people">
+                <div class="person">
+                    <strong>உரிமையாளர் (Owner)</strong>
+                    VijayAnthuvanRaj A
+                </div>
+                <div class="person">
+                    <strong>மேலாளர் (Manager)</strong>
+                    Josewajayaseelan J
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>கிடைக்கும் பொருட்கள் & விலை</h2>
             <div class="products">
 
                 <div class="product">
@@ -89,15 +93,12 @@
                 </div>
 
             </div>
-
-            <div class="price-section">
-                <h3>விலை</h3>
-                <span class="arrow">⬇️</span>
-                <span class="arrow">📥</span>
-            </div>
+            <p style="margin-top:15px; font-size:0.9rem; color:#555;">
+                * விலை தூரம் மற்றும் quantity-ஐ பொறுத்து மாறலாம். சரியான விலைக்கு அழைக்கவும்.
+            </p>
         </div>
 
-        <div class="card contact-bottom">
+        <div class="card contact">
             <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2>
             <p>📍 முகவரி: கருப்புர், கும்பகோணம்</p>
             <p>📞 <a href="tel:+918428029787">+91 84280 29787</a></p>
