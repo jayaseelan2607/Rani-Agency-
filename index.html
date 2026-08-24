@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ராணி ஏஜென்சி | Rani Agency</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+    <meta name="referrer" content="no-referrer">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: #f0f4f8; color: #222; line-height: 1.6; }
+        body { background: #f0f4f8; color: #222; line-height: 1.6; -webkit-user-select: none; user-select: none; }
         
         .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 26px 16px; text-align: center; }
         
         .brand { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
         
-        /* Exact style Logo */
         .logo {
             width: 72px;
             height: 72px;
@@ -58,7 +61,7 @@
         .price-title h3 { color: #1a3a6e; font-size: 1.15rem; margin-top: 6px; }
 
         .product-item { background: #e8f0fe; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
-        .product-header { padding: 16px 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #1a3a6e; font-size: 1.05rem; user-select: none; }
+        .product-header { padding: 16px 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #1a3a6e; font-size: 1.05rem; }
         .product-header:active { background: #d6e4ff; }
         .product-header .icon { font-size: 1.2rem; transition: transform 0.25s; }
         .product-item.active .product-header .icon { transform: rotate(180deg); }
@@ -215,6 +218,7 @@
     </footer>
 
     <script>
+        // Product accordion
         function toggleProduct(header) {
             const item = header.parentElement;
             document.querySelectorAll('.product-item').forEach(el => {
@@ -222,6 +226,53 @@
             });
             item.classList.toggle('active');
         }
+
+        // ========== MAXIMUM BASIC PROTECTION ==========
+        
+        // 1. Disable right click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // 2. Disable text selection & drag
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
+
+        // 3. Block keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) { e.preventDefault(); return false; }
+            // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+U (view source)
+            if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; }
+            // Ctrl+S (save)
+            if (e.ctrlKey && e.keyCode === 83) { e.preventDefault(); return false; }
+            // Ctrl+P
+            if (e.ctrlKey && e.keyCode === 80) { e.preventDefault(); return false; }
+        });
+
+        // 4. Console warning + clear
+        setInterval(function() {
+            console.clear();
+            console.log("%c⚠ Stop!", "color: red; font-size: 50px; font-weight: bold;");
+            console.log("%cThis browser feature is for developers only. Do not enter any code here.", "font-size: 16px; color: red;");
+        }, 1500);
+
+        // 5. Basic DevTools detection (not 100% reliable)
+        let devtools = { open: false };
+        setInterval(function() {
+            const widthThreshold = window.outerWidth - window.innerWidth > 160;
+            const heightThreshold = window.outerHeight - window.innerHeight > 160;
+            if (widthThreshold || heightThreshold) {
+                if (!devtools.open) {
+                    devtools.open = true;
+                    document.body.innerHTML = "<div style='display:flex;justify-content:center;align-items:center;height:100vh;background:#1a3a6e;color:white;font-size:24px;text-align:center;padding:20px;'>Developer tools detected.<br>Access restricted for security.</div>";
+                }
+            } else {
+                devtools.open = false;
+            }
+        }, 1000);
     </script>
 
 </body>
