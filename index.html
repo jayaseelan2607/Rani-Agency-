@@ -17,22 +17,28 @@
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         .card { background: white; border-radius: 12px; padding: 22px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .card h2 { color: #1a3a6e; margin-bottom: 14px; font-size: 1.4rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 7px; }
-        .material-list { list-style: none; padding: 0; margin-bottom: 18px; }
-        .material-list li { padding: 8px 12px; background: #f1f5f9; margin-bottom: 6px; border-radius: 6px; font-weight: 600; color: #1a3a6e; }
-        .price-title { text-align: center; margin: 20px 0 10px; }
-        .price-title h3 { color: #1a3a6e; font-size: 1.35rem; }
-        .arrow { font-size: 1.8rem; display: block; margin: 6px 0; color: #1a3a6e; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 14px; margin-top: 12px; }
-        .product { background: #e8f0fe; padding: 16px 10px; border-radius: 10px; text-align: center; }
-        .product-name { font-weight: 700; color: #1a3a6e; margin-bottom: 5px; font-size: 1rem; }
-        .product-price { color: #c0392b; font-weight: 600; font-size: 0.95rem; }
-        .note { font-size: 0.82rem; color: #555; margin-top: 4px; }
-        .unit { font-size: 0.8rem; color: #1a3a6e; font-weight: 600; margin-top: 3px; }
+        .price-title { text-align: center; margin: 8px 0 16px; }
+        .price-title .offer { background: #e8f5e9; color: #2e7d32; font-weight: 600; padding: 8px 12px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px; display: inline-block; }
+        .price-title h3 { color: #1a3a6e; font-size: 1.15rem; margin-top: 6px; }
+
+        .product-item { background: #e8f0fe; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .product-header { padding: 16px 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #1a3a6e; font-size: 1.05rem; user-select: none; }
+        .product-header:active { background: #d6e4ff; }
+        .product-header .icon { font-size: 1.2rem; transition: transform 0.25s; }
+        .product-item.active .product-header .icon { transform: rotate(180deg); }
+        .product-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #f8fafc; }
+        .product-item.active .product-body { max-height: 280px; }
+        .product-details { padding: 14px 16px 18px; }
+        .product-price { color: #c0392b; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; }
+        .unit { font-size: 0.9rem; color: #1a3a6e; font-weight: 600; margin-bottom: 4px; }
+        .note { font-size: 0.88rem; color: #555; }
+
         .contact-bottom { background: #1a3a6e; color: white; text-align: center; }
         .contact-bottom a { color: #ffd700; text-decoration: none; font-size: 1.15rem; font-weight: bold; }
         .contact-bottom p { margin: 7px 0; }
         .contact-bottom .numbers { white-space: nowrap; overflow-x: auto; }
         footer { text-align: center; padding: 18px; color: #666; font-size: 0.9rem; }
+
         @media (max-width: 480px) {
             .header .contacts, .contact-bottom .numbers { font-size: 0.95rem; }
             .header h1 { font-size: 1.9rem; }
@@ -57,65 +63,101 @@
 
         <div class="card">
             <h2>கிடைக்கும் பொருட்கள்</h2>
-            <ul class="material-list">
-                <li>எம். சாண்ட் (M.Sand)</li>
-                <li>பி. சாண்ட் (P.Sand)</li>
-                <li>ஜல்லி / முக்கால் ஜல்லி (Jally)</li>
-                <li>செங்கல் (Bricks)</li>
-                <li>ஏ.சி. பிளாக் (ACC Block)</li>
-                <li>ஹாலோ பிளாக் (Hollow Blocks)</li>
-            </ul>
 
             <div class="price-title">
-                <h3>விலை விவரம்</h3>
-                <span class="arrow">⬇️</span>
+                <div class="offer">மொத்த லோடாக வாங்கினால் விலை குறைவாகக் கிடைக்கும்</div>
+                <h3>பொருள் விவரம் தெரிய பொருள் பெயரை தொடவும்</h3>
             </div>
 
-            <div class="products">
-
-                <div class="product">
-                    <div class="product-name">எம். சாண்ட் (M.Sand)</div>
-                    <div class="product-price">₹ 6,700 - 7,000</div>
-                    <div class="unit">ஒரு யூனிட் விலை</div>
-                    <div class="note">தூரத்தைப் பொறுத்து</div>
+            <!-- Product 1 -->
+            <div class="product-item">
+                <div class="product-header" onclick="toggleProduct(this)">
+                    எம். சாண்ட் (M.Sand)
+                    <span class="icon">▼</span>
                 </div>
-
-                <div class="product">
-                    <div class="product-name">பி. சாண்ட் (P.Sand)</div>
-                    <div class="product-price">₹ 7,600 - 8,000</div>
-                    <div class="unit">ஒரு யூனிட் விலை</div>
-                    <div class="note">தூரத்தைப் பொறுத்து</div>
+                <div class="product-body">
+                    <div class="product-details">
+                        <div class="product-price">₹ 6,700 - 7,000</div>
+                        <div class="unit">ஒரு யூனிட் விலை</div>
+                        <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="product">
-                    <div class="product-name">முக்கால் ஜல்லி (Jally)</div>
-                    <div class="product-price">₹ 5,700 - 6,000</div>
-                    <div class="unit">ஒரு யூனிட் விலை</div>
-                    <div class="note">தூரத்தைப் பொறுத்து</div>
+            <!-- Product 2 -->
+            <div class="product-item">
+                <div class="product-header" onclick="toggleProduct(this)">
+                    பி. சாண்ட் (P.Sand)
+                    <span class="icon">▼</span>
                 </div>
-
-                <div class="product">
-                    <div class="product-name">செங்கல் (Bricks)</div>
-                    <div class="product-price">₹ 28,000 - 28,500</div>
-                    <div class="note">1 லோடு (3000 செங்கல்)<br>தூரத்தைப் பொறுத்து</div>
+                <div class="product-body">
+                    <div class="product-details">
+                        <div class="product-price">₹ 7,600 - 8,000</div>
+                        <div class="unit">ஒரு யூனிட் விலை</div>
+                        <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="product">
-                    <div class="product-name">ஏ.சி. பிளாக் (ACC Block)</div>
-                    <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
-                    <div class="note">4", 6", 8", 9" sizes</div>
+            <!-- Product 3 -->
+            <div class="product-item">
+                <div class="product-header" onclick="toggleProduct(this)">
+                    முக்கால் ஜல்லி (Jally)
+                    <span class="icon">▼</span>
                 </div>
-
-                <div class="product">
-                    <div class="product-name">ஹாலோ பிளாக் (Hollow Blocks)</div>
-                    <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
-                    <div class="note">விவரம் அறிய அழைக்கவும்</div>
+                <div class="product-body">
+                    <div class="product-details">
+                        <div class="product-price">₹ 5,700 - 6,000</div>
+                        <div class="unit">ஒரு யூனிட் விலை</div>
+                        <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+                    </div>
                 </div>
+            </div>
 
+            <!-- Product 4 -->
+            <div class="product-item">
+                <div class="product-header" onclick="toggleProduct(this)">
+                    செங்கல் (Bricks)
+                    <span class="icon">▼</span>
+                </div>
+                <div class="product-body">
+                    <div class="product-details">
+                        <div class="product-price">₹ 28,000 - 28,500</div>
+                        <div class="note">1 லோடு = 3000 செங்கல்<br>தூரத்தைப் பொறுத்து விலை மாறும்</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-item">
+                <div class="product-header" onclick="toggleProduct(this)">
+                    ஏ.சி. பிளாக் (ACC Block)
+                    <span class="icon">▼</span>
+                </div>
+                <div class="product-body">
+                    <div class="product-details">
+                        <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+                        <div class="note">Sizes: 4", 6", 8", 9"<br>சரியான விலைக்கு தொடர்பு கொள்ளவும்</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item">
+                <div class="product-header" onclick="toggleProduct(this)">
+                    ஹாலோ பிளாக் (Hollow Blocks)
+                    <span class="icon">▼</span>
+                </div>
+                <div class="product-body">
+                    <div class="product-details">
+                        <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+                        <div class="note">விவரம் மற்றும் விலை அறிய அழைக்கவும்</div>
+                    </div>
+                </div>
             </div>
 
             <p style="margin-top:16px; font-size:0.88rem; color:#555; text-align:center;">
-                * விலை தூரம் மற்றும் பொருள் விலையைப் பொறுத்து மாறும். சரியான விலைக்கு அழைக்கவும்.
+                * விலை தூரம் மற்றும் பொருள் அளவைப் பொறுத்து மாறும். சரியான விலைக்கு அழைக்கவும்.
             </p>
         </div>
 
@@ -132,6 +174,16 @@
     <footer>
         © 2026 ராணி ஏஜென்சி | Rani Agency
     </footer>
+
+    <script>
+        function toggleProduct(header) {
+            const item = header.parentElement;
+            document.querySelectorAll('.product-item').forEach(el => {
+                if (el !== item) el.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
