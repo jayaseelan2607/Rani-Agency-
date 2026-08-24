@@ -1,10 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="ta">
 <head>
-    <title>Rani Agency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ராணி ஏஜென்சி | Rani Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f0f4f8;
+            color: #222;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a3a6e, #0d2b5e);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .card h2 {
+            color: #1a3a6e;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #1a3a6e;
+            padding-bottom: 8px;
+        }
+        .people {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .person {
+            flex: 1;
+            min-width: 200px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #1a3a6e;
+        }
+        .person strong {
+            display: block;
+            color: #1a3a6e;
+            margin-bottom: 4px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        .product {
+            background: #e8f0fe;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #1a3a6e;
+        }
+        .contact {
+            background: #1a3a6e;
+            color: white;
+            text-align: center;
+        }
+        .contact a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .contact p {
+            margin: 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a3a6e;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Rani Agency</h1>
-    <p>This is my free website hosted on GitHub Pages.</p>
+
+    <div class="header">
+        <h1>ராணி ஏஜென்சி</h1>
+        <p>Rani Agency</p>
+        <div class="badge">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div>
+    </div>
+
+    <div class="container">
+
+        <!-- Owner & Manager -->
+        <div class="card">
+            <h2>உரிமையாளர் & மேலாளர்</h2>
+            <div class="people">
+                <div class="person">
+                    <strong>உரிமையாளர் (Owner)</strong>
+                    VijayAnthuvanRaj A
+                </div>
+                <div class="person">
+                    <strong>மேலாளர் (Manager)</strong>
+                    Josewajayaseelan J
+                </div>
+            </div>
+        </div>
+
+        <!-- Products -->
+        <div class="card">
+            <h2>கிடைக்கும் பொருட்கள்</h2>
+            <div class="products">
+                <div class="product">எம். சாண்ட்<br>(M.Sand)</div>
+                <div class="product">பி. சாண்ட்<br>(P.Sand)</div>
+                <div class="product">ஜல்லி<br>(Jally)</div>
+                <div class="product">செங்கல்<br>(Bricks)</div>
+                <div class="product">ஏ.சி. பிளாக்<br>(ACC Block)</div>
+                <div class="product">ஹாலோ பிளாக்<br>(Hollow Blocks)</div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="card contact">
+            <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2>
+            <p>📍 முகவரி: கருப்புர், கும்பகோணம்</p>
+            <p>📞 <a href="tel:+918428029787">+91 84280 29787</a></p>
+            <p>📞 <a href="tel:+916385556428">+91 63855 56428</a></p>
+            <p style="margin-top:15px;">WhatsApp-ல் தொடர்பு கொள்ளுங்கள்</p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 ராணி ஏஜென்சி | Rani Agency — All Rights Reserved
+    </footer>
+
 </body>
 </html>
