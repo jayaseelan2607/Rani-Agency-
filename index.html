@@ -1,22 +1,470 @@
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' data: https:;"><meta name="referrer" content="no-referrer"><style> * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } body { background: #f0f4f8; color: #222; line-height: 1.6; -webkit-user-select: none; user-select: none; } .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 26px 16px; text-align: center; } .brand { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; } .logo { width: 72px; height: 72px; background: linear-gradient(145deg, #1565C0, #0D47A1); clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.35); } .logo::before { content: ""; position: absolute; top: -18px; width: 42px; height: 22px; background: #1565C0; clip-path: polygon(10% 100%, 0% 40%, 20% 60%, 35% 0%, 50% 45%, 65% 0%, 80% 60%, 100% 40%, 90% 100%); } .logo span { color: white; font-size: 34px; font-weight: 900; font-family: Arial Black, Arial, sans-serif; line-height: 1; margin-top: 4px; } .header h1 { font-size: 2.2rem; margin: 0; line-height: 1.2; } .header .tagline { font-size: 1rem; background: #ffd700; color: #1a3a6e; display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin: 12px 0 8px; } .header .contacts { margin-top: 12px; font-size: 1.05rem; white-space: nowrap; overflow-x: auto; } .header .contacts a { color: #ffd700; text-decoration: none; font-weight: bold; } .header .people { margin-top: 14px; font-size: 0.95rem; } .header .people span { display: block; margin: 3px 0; } .container { max-width: 900px; margin: 0 auto; padding: 20px; } .card { background: white; border-radius: 12px; padding: 22px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); } .card h2 { color: #1a3a6e; margin-bottom: 14px; font-size: 1.4rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 7px; } .price-title { text-align: center; margin: 8px 0 16px; } .price-title .offer { background: #e8f5e9; color: #2e7d32; font-weight: 600; padding: 8px 12px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px; display: inline-block; } .price-title h3 { color: #1a3a6e; font-size: 1.15rem; margin-top: 6px; } .product-item { background: #e8f0fe; border-radius: 10px; margin-bottom: 12px; overflow: hidden; } .product-header { padding: 16px 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #1a3a6e; font-size: 1.05rem; } .product-header:active { background: #d6e4ff; } .product-header .icon { font-size: 1.2rem; transition: transform 0.25s; } .product-item.active .product-header .icon { transform: rotate(180deg); } .product-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: #f8fafc; } .product-item.active .product-body { max-height: 480px; } .product-details { padding: 14px 16px 18px; } .product-price { color: #c0392b; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; } .unit { font-size: 0.9rem; color: #1a3a6e; font-weight: 600; margin-bottom: 4px; } .note { font-size: 0.88rem; color: #555; } .sub-unit { background: #e3f2fd; padding: 10px 12px; border-radius: 8px; margin-bottom: 8px; } .sub-unit strong { color: #1a3a6e; } .contact-bottom { background: #1a3a6e; color: white; text-align: center; } .contact-bottom a { color: #ffd700; text-decoration: none; font-size: 1.15rem; font-weight: bold; } .contact-bottom p { margin: 7px 0; } .contact-bottom .numbers { white-space: nowrap; overflow-x: auto; } footer { text-align: center; padding: 18px; color: #666; font-size: 0.9rem; } @media (max-width: 480px) { .header .contacts, .contact-bottom .numbers { font-size: 0.95rem; } .header h1 { font-size: 1.8rem; } .logo { width: 58px; height: 58px; } .logo span { font-size: 26px; } .logo::before { top: -15px; width: 34px; height: 18px; } }</style>
-<div class="header"> <div class="brand"> <div class="logo"><span>R</span></div> <h1>ராணி ஏஜென்சி</h1> </div> <div class="tagline">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div> <div class="contacts"> 📞 <a href="tel:+918428029787">+91 84280 29787</a> &nbsp;|&nbsp; <a href="tel:+916385556428">+91 63855 56428</a> </div> <div class="people"> <span><strong>உரிமையாளர்:</strong> VijayAnthuvanRaj A</span> <span><strong>மேலாளர்:</strong> Josewajayaseelan J</span> </div></div>
-<div class="container"> <div class="card"> <h2>கிடைக்கும் பொருட்கள்</h2> <div class="price-title"> <div class="offer">மொத்த லோடாக வாங்கினால் விலை குறைவாகக் கிடைக்கும்</div> <h3>பொருள் விவரம் தெரிய பொருள் பெயரை தொடவும்</h3> </div>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' data: https:;"><meta name="referrer" content="no-referrer">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+body{background:#f0f4f8;color:#222;line-height:1.6;-webkit-user-select:none;user-select:none}
+.header{background:linear-gradient(135deg,#1a3a6e,#0d2b5e);color:white;padding:26px 16px;text-align:center}
+.brand{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.logo{width:72px;height:72px;background:linear-gradient(145deg,#1565C0,#0D47A1);clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.logo::before{content:"";position:absolute;top:-18px;width:42px;height:22px;background:#1565C0;clip-path:polygon(10% 100%,0% 40%,20% 60%,35% 0%,50% 45%,65% 0%,80% 60%,100% 40%,90% 100%)}
+.logo span{color:white;font-size:34px;font-weight:900;font-family:Arial Black,Arial,sans-serif;line-height:1;margin-top:4px}
+.header h1{font-size:2.2rem;margin:0;line-height:1.2}
+.header .tagline{font-size:1rem;background:#ffd700;color:#1a3a6e;display:inline-block;padding:6px 14px;border-radius:20px;font-weight:bold;margin:12px 0 8px}
+.header .contacts{margin-top:12px;font-size:1.05rem;white-space:nowrap;overflow-x:auto}
+.header .contacts a{color:#ffd700;text-decoration:none;font-weight:bold}
+.header .people{margin-top:14px;font-size:.95rem}
+.header .people span{display:block;margin:3px 0}
+.container{max-width:900px;margin:0 auto;padding:20px}
+.card{background:white;border-radius:12px;padding:22px;margin-bottom:18px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.card h2{color:#1a3a6e;margin-bottom:14px;font-size:1.4rem;border-bottom:3px solid #1a3a6e;padding-bottom:7px}
+.price-title{text-align:center;margin:8px 0 16px}
+.price-title .offer{background:#e8f5e9;color:#2e7d32;font-weight:600;padding:8px 12px;border-radius:8px;font-size:.95rem;margin-bottom:10px;display:inline-block}
+.price-title h3{color:#1a3a6e;font-size:1.15rem;margin-top:6px}
+.product-item{background:#e8f0fe;border-radius:10px;margin-bottom:12px;overflow:hidden}
+.product-header{padding:16px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#1a3a6e;font-size:1.05rem}
+.product-header:active{background:#d6e4ff}
+.product-header .icon{font-size:1.2rem;transition:transform .25s}
+.product-item.active .product-header .icon{transform:rotate(180deg)}
+.product-body{max-height:0;overflow:hidden;transition:max-height .35s ease;background:#f8fafc}
+.product-item.active .product-body{max-height:900px}
+.product-details{padding:14px 16px 18px}
+.product-price{color:#c0392b;font-weight:700;font-size:1.1rem;margin-bottom:6px}
+.unit{font-size:.9rem;color:#1a3a6e;font-weight:600;margin-bottom:4px}
+.note{font-size:.88rem;color:#555}
+.sub-unit{background:#e3f2fd;padding:10px 12px;border-radius:8px;margin-bottom:8px}
+.sub-unit strong{color:#1a3a6e}
+.order-box{margin-top:14px;padding:14px;background:#fff;border:2px solid #1a3a6e;border-radius:10px}
+.order-box label{display:block;font-size:.9rem;font-weight:600;color:#1a3a6e;margin-bottom:4px}
+.order-box select,.order-box input{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-size:1rem;margin-bottom:10px}
+.order-note{background:#fff3cd;color:#856404;padding:10px;border-radius:8px;font-size:.88rem;margin-bottom:12px;line-height:1.5}
+.order-btn{width:100%;padding:12px;background:#25D366;color:white;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer}
+.order-btn:active{background:#1da851}
+.contact-bottom{background:#1a3a6e;color:white;text-align:center}
+.contact-bottom a{color:#ffd700;text-decoration:none;font-size:1.15rem;font-weight:bold}
+.contact-bottom p{margin:7px 0}
+.contact-bottom .numbers{white-space:nowrap;overflow-x:auto}
+footer{text-align:center;padding:18px;color:#666;font-size:.9rem}
+@media(max-width:480px){.header .contacts,.contact-bottom .numbers{font-size:.95rem}.header h1{font-size:1.8rem}.logo{width:58px;height:58px}.logo span{font-size:26px}.logo::before{top:-15px;width:34px;height:18px}}
+</style>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> எம். சாண்ட் (M.Sand) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="product-price">₹ 6,500 - 7,000</div> <div class="unit">ஒரு யூனிட் விலை</div> <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div> </div> </div> </div>
+<div class="header">
+  <div class="brand">
+    <div class="logo"><span>R</span></div>
+    <h1>ராணி ஏஜென்சி</h1>
+  </div>
+  <div class="tagline">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div>
+  <div class="contacts">
+    📞 <a href="tel:+918428029787">+91 84280 29787</a> &nbsp;|&nbsp; <a href="tel:+916385556428">+91 63855 56428</a>
+  </div>
+  <div class="people">
+    <span><strong>உரிமையாளர்:</strong> VijayAnthuvanRaj A</span>
+    <span><strong>மேலாளர்:</strong> Josewajayaseelan J</span>
+  </div>
+</div>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> பி. சாண்ட் (P.Sand) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="product-price">₹ 7,600 - 8,000</div> <div class="unit">ஒரு யூனிட் விலை</div> <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div> </div> </div> </div>
+<div class="container">
+  <div class="card">
+    <h2>கிடைக்கும் பொருட்கள்</h2>
+    <div class="price-title">
+      <div class="offer">மொத்த லோடாக வாங்கினால் விலை குறைவாகக் கிடைக்கும்</div>
+      <h3>பொருள் விவரம் தெரிய பொருள் பெயரை தொடவும்</h3>
+    </div>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> ஜல்லி (Jally) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="sub-unit"><strong>முக்கால் ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span></div> <div class="sub-unit"><strong>ஒன்றரை ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span></div> <div class="sub-unit"><strong>அரை ஜல்லி & Chips</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,800 - 6,000</span></div> <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div> </div> </div> </div>
+    <!-- M.Sand -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        எம். சாண்ட் (M.Sand) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 6,300 - 7,000</div>
+          <div class="unit">ஒரு யூனிட் விலை</div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>அளவு (Unit)</label>
+            <select id="qty-msand">
+              <option value="0.25">கால யூனிட் (0.25)</option>
+              <option value="0.5">அரை யூனிட் (0.5)</option>
+              <option value="1">1 யூனிட்</option>
+              <option value="1.5">1.5 யூனிட்</option>
+              <option value="2">2 யூனிட்</option>
+              <option value="3">3 யூனிட்</option>
+              <option value="4">4 யூனிட்</option>
+              <option value="5">5 யூனிட்</option>
+              <option value="6">6 யூனிட்</option>
+              <option value="7">7 யூனிட்</option>
+              <option value="8">8 யூனிட்</option>
+              <option value="9">9 யூனிட்</option>
+              <option value="10">10 யூனிட்</option>
+            </select>
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-msand" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-msand" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrder('எம். சாண்ட் (M.Sand)', 'qty-msand', 'name-msand', 'mobile-msand')">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> கிரவால் (Gravel) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="sub-unit"><strong>4 Unit</strong><br><span class="product-price" style="font-size:1rem;">₹ 10,000 - 12,000</span></div> <div class="sub-unit"><strong>6 Unit</strong><br><span class="product-price" style="font-size:1rem;">₹ 12,000 - 14,000</span></div> <div class="sub-unit"><strong>9 Unit</strong><br><span class="product-price" style="font-size:1rem;">₹ 17,000 - 19,000</span></div> <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div> </div> </div> </div>
+    <!-- P.Sand -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        பி. சாண்ட் (P.Sand) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 7,300 - 8,000</div>
+          <div class="unit">ஒரு யூனிட் விலை</div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>அளவு (Unit)</label>
+            <select id="qty-psand">
+              <option value="0.25">கால யூனிட் (0.25)</option>
+              <option value="0.5">அரை யூனிட் (0.5)</option>
+              <option value="1">1 யூனிட்</option>
+              <option value="1.5">1.5 யூனிட்</option>
+              <option value="2">2 யூனிட்</option>
+              <option value="3">3 யூனிட்</option>
+              <option value="4">4 யூனிட்</option>
+              <option value="5">5 யூனிட்</option>
+              <option value="6">6 யூனிட்</option>
+              <option value="7">7 யூனிட்</option>
+              <option value="8">8 யூனிட்</option>
+              <option value="9">9 யூனிட்</option>
+              <option value="10">10 யூனிட்</option>
+            </select>
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-psand" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-psand" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrder('பி. சாண்ட் (P.Sand)', 'qty-psand', 'name-psand', 'mobile-psand')">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> செங்கல் (Bricks) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="product-price">₹ 28,000 - 28,500</div> <div class="note">1 லோடு = 3000 செங்கல்<br>தூரத்தைப் பொறுத்து விலை மாறும்</div> </div> </div> </div>
+    <!-- ஜல்லி -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஜல்லி (Jally) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="sub-unit"><strong>முக்கால் ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span></div>
+          <div class="sub-unit"><strong>ஒன்றரை ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span></div>
+          <div class="sub-unit"><strong>அரை ஜல்லி & Chips</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,800 - 6,000</span></div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>எந்த ஜல்லி?</label>
+            <select id="type-jally">
+              <option value="முக்கால் ஜல்லி">முக்கால் ஜல்லி</option>
+              <option value="ஒன்றரை ஜல்லி">ஒன்றரை ஜல்லி</option>
+              <option value="அரை ஜல்லி & Chips">அரை ஜல்லி & Chips</option>
+            </select>
+            <label>அளவு (Unit)</label>
+            <select id="qty-jally">
+              <option value="0.25">கால யூனிட் (0.25)</option>
+              <option value="0.5">அரை யூனிட் (0.5)</option>
+              <option value="1">1 யூனிட்</option>
+              <option value="1.5">1.5 யூனிட்</option>
+              <option value="2">2 யூனிட்</option>
+              <option value="3">3 யூனிட்</option>
+              <option value="4">4 யூனிட்</option>
+              <option value="5">5 யூனிட்</option>
+              <option value="6">6 யூனிட்</option>
+              <option value="7">7 யூனிட்</option>
+              <option value="8">8 யூனிட்</option>
+              <option value="9">9 யூனிட்</option>
+              <option value="10">10 யூனிட்</option>
+            </select>
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-jally" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-jally" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrderJally()">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> ஏ.சி. பிளாக் (ACC Block) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="product-price">தயவுசெய்து அழைக்கவும்</div> <div class="note">Sizes: 4", 6", 8", 9"<br>சரியான விலைக்கு தொடர்பு கொள்ளவும்</div> </div> </div> </div>
+    <!-- கிரவால் -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        கிரவால் (Gravel) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="sub-unit"><strong>4 Unit</strong><br><span class="product-price" style="font-size:1rem;">₹ 10,000 - 12,000</span></div>
+          <div class="sub-unit"><strong>6 Unit</strong><br><span class="product-price" style="font-size:1rem;">₹ 12,000 - 14,000</span></div>
+          <div class="sub-unit"><strong>9 Unit</strong><br><span class="product-price" style="font-size:1rem;">₹ 17,000 - 19,000</span></div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>அளவு (Unit)</label>
+            <select id="qty-gravel">
+              <option value="3">3 Unit</option>
+              <option value="4">4 Unit</option>
+              <option value="5">5 Unit</option>
+              <option value="6">6 Unit</option>
+              <option value="7">7 Unit</option>
+              <option value="8">8 Unit</option>
+              <option value="9">9 Unit</option>
+            </select>
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-gravel" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-gravel" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrder('கிரவால் (Gravel)', 'qty-gravel', 'name-gravel', 'mobile-gravel')">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="product-item"> <div class="product-header" onclick="toggleProduct(this)"> ஹாலோ பிளாக் (Hollow Blocks) <span class="icon">▼</span> </div> <div class="product-body"> <div class="product-details"> <div class="product-price">தயவுசெய்து அழைக்கவும்</div> <div class="note">விவரம் மற்றும் விலை அறிய அழைக்கவும்</div> </div> </div> </div>
+    <!-- செங்கல் -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        செங்கல் (Bricks) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 28,000 - 28,500</div>
+          <div class="note">1 Load = 3000 செங்கல்<br>தூரத்தைப் பொறுத்து விலை மாறும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>Load எண்ணிக்கை</label>
+            <select id="qty-bricks">
+              <option value="1">1 Load</option>
+              <option value="2">2 Load</option>
+              <option value="3">3 Load</option>
+              <option value="4">4 Load</option>
+              <option value="5">5 Load</option>
+              <option value="6">6 Load</option>
+              <option value="7">7 Load</option>
+              <option value="8">8 Load</option>
+              <option value="9">9 Load</option>
+              <option value="10">10 Load</option>
+              <option value="15">15 Load</option>
+              <option value="20">20 Load</option>
+              <option value="25">25 Load</option>
+              <option value="30">30 Load</option>
+            </select>
+            <label>அல்லது Pieces எண்ணிக்கை (optional)</label>
+            <input type="number" id="pieces-bricks" placeholder="எ.கா. 6000" min="1">
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-bricks" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-bricks" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrderBricks()">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<p style="margin-top:16px; font-size:0.88rem; color:#555; text-align:center;"> * விலை தூரம் மற்றும் பொருள் அளவைப் பொறுத்து மாறும். சரியான விலைக்கு அழைக்கவும். </p> </div>
-<div class="card contact-bottom"> <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2> <p>📍 முகவரி: கருப்புர், கும்பகோணம்</p> <p class="numbers"> 📞 <a href="tel:+918428029787">+91 84280 29787</a> &nbsp;|&nbsp; <a href="tel:+916385556428">+91 63855 56428</a> </p> </div></div>
-<footer> © 2026 ராணி ஏஜென்சி | Rani Agency</footer>
-<script> function toggleProduct(header) { const item = header.parentElement; document.querySelectorAll('.product-item').forEach(el => { if (el !== item) el.classList.remove('active'); }); item.classList.toggle('active'); } document.addEventListener('contextmenu', e => e.preventDefault()); document.addEventListener('selectstart', e => e.preventDefault()); document.addEventListener('dragstart', e => e.preventDefault()); document.addEventListener('keydown', function(e) { if (e.keyCode === 123) { e.preventDefault(); return false; } if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { e.preventDefault(); return false; } if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; } if (e.ctrlKey && e.keyCode === 83) { e.preventDefault(); return false; } if (e.ctrlKey && e.keyCode === 80) { e.preventDefault(); return false; } }); setInterval(function() { console.clear(); console.log("%c⚠ Stop!", "color: red; font-size: 50px; font-weight: bold;"); console.log("%cThis browser feature is for developers only. Do not enter any code here.", "font-size: 16px; color: red;"); }, 1500); let devtools = { open: false }; setInterval(function() { const widthThreshold = window.outerWidth - window.innerWidth > 160; const heightThreshold = window.outerHeight - window.innerHeight > 160; if (widthThreshold || heightThreshold) { if (!devtools.open) { devtools.open = true; document.body.innerHTML = "<div style='display:flex;justify-content:center;align-items:center;height:100vh;background:#1a3a6e;color:white;font-size:24px;text-align:center;padding:20px;'>Developer tools detected.<br>Access restricted for security.</div>"; } } else { devtools.open = false; } }, 1000);</script>
+    <!-- ACC Block -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஏ.சி. பிளாக் (ACC Block) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+          <div class="note">Sizes: 4", 6", 8", 9"<br>சரியான விலைக்கு தொடர்பு கொள்ளவும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>Size (Inch)</label>
+            <select id="size-acc">
+              <option value="4 inch">4"</option>
+              <option value="6 inch">6"</option>
+              <option value="8 inch">8"</option>
+              <option value="9 inch">9"</option>
+            </select>
+            <label>Pieces எண்ணிக்கை</label>
+            <input type="number" id="pieces-acc" placeholder="எ.கா. 500" min="1">
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-acc" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-acc" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrderACC()">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hollow Blocks -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஹாலோ பிளாக் (Hollow Blocks) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+          <div class="note">விவரம் மற்றும் விலை அறிய அழைக்கவும்</div>
+          <div class="order-box">
+            <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
+            <label>அளவு</label>
+            <select id="qty-hollow">
+              <option value="1 Load">1 Load</option>
+              <option value="2 Load">2 Load</option>
+              <option value="3 Load">3 Load</option>
+            </select>
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-hollow" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-hollow" placeholder="10 digit number">
+            <button class="order-btn" onclick="sendOrder('ஹாலோ பிளாக் (Hollow Blocks)', 'qty-hollow', 'name-hollow', 'mobile-hollow')">WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:16px;font-size:.88rem;color:#555;text-align:center">* விலை தூரம் மற்றும் பொருள் அளவைப் பொறுத்து மாறும். சரியான விலைக்கு அழைக்கவும்.</p>
+  </div>
+
+  <div class="card contact-bottom">
+    <h2 style="color:white;border-color:#ffd700">தொடர்புக்கு</h2>
+    <p>📍 முகவரி: கருப்புர், கும்பகோணம்</p>
+    <p class="numbers">
+      📞 <a href="tel:+918428029787">+91 84280 29787</a> &nbsp;|&nbsp; <a href="tel:+916385556428">+91 63855 56428</a>
+    </p>
+  </div>
+</div>
+
+<footer>© 2026 ராணி ஏஜென்சி | Rani Agency</footer>
+
+<script>
+function toggleProduct(header) {
+  const item = header.parentElement;
+  document.querySelectorAll('.product-item').forEach(el => {
+    if (el !== item) el.classList.remove('active');
+  });
+  item.classList.toggle('active');
+}
+
+function sendOrder(product, qtyId, nameId, mobileId) {
+  const qty = document.getElementById(qtyId).value;
+  const name = document.getElementById(nameId).value.trim();
+  const mobile = document.getElementById(mobileId).value.trim();
+
+  if (!name || !mobile) {
+    alert('பெயர் மற்றும் மொபைல் நம்பர் கட்டாயம் பூர்த்தி செய்யவும்');
+    return;
+  }
+  if (mobile.length < 10) {
+    alert('சரியான 10 digit மொபைல் நம்பர் போடவும்');
+    return;
+  }
+
+  const message = `*புதிய Order - ராணி ஏஜென்சி*%0A%0A` +
+    `*பொருள்:* ${product}%0A` +
+    `*அளவு:* ${qty}%0A` +
+    `*பெயர்:* ${name}%0A` +
+    `*மொபைல்:* ${mobile}%0A%0A` +
+    `தயவுசெய்து விலை மற்றும் delivery confirm பண்ணுங்க.`;
+
+  window.open(`https://wa.me/918428029787?text=${message}`, '_blank');
+}
+
+function sendOrderJally() {
+  const type = document.getElementById('type-jally').value;
+  const qty = document.getElementById('qty-jally').value;
+  const name = document.getElementById('name-jally').value.trim();
+  const mobile = document.getElementById('mobile-jally').value.trim();
+
+  if (!name || !mobile) {
+    alert('பெயர் மற்றும் மொபைல் நம்பர் கட்டாயம் பூர்த்தி செய்யவும்');
+    return;
+  }
+  if (mobile.length < 10) {
+    alert('சரியான 10 digit மொபைல் நம்பர் போடவும்');
+    return;
+  }
+
+  const message = `*புதிய Order - ராணி ஏஜென்சி*%0A%0A` +
+    `*பொருள்:* ஜல்லி - ${type}%0A` +
+    `*அளவு:* ${qty} Unit%0A` +
+    `*பெயர்:* ${name}%0A` +
+    `*மொபைல்:* ${mobile}%0A%0A` +
+    `தயவுசெய்து விலை மற்றும் delivery confirm பண்ணுங்க.`;
+
+  window.open(`https://wa.me/918428029787?text=${message}`, '_blank');
+}
+
+function sendOrderBricks() {
+  const qty = document.getElementById('qty-bricks').value;
+  const pieces = document.getElementById('pieces-bricks').value.trim();
+  const name = document.getElementById('name-bricks').value.trim();
+  const mobile = document.getElementById('mobile-bricks').value.trim();
+
+  if (!name || !mobile) {
+    alert('பெயர் மற்றும் மொபைல் நம்பர் கட்டாயம் பூர்த்தி செய்யவும்');
+    return;
+  }
+  if (mobile.length < 10) {
+    alert('சரியான 10 digit மொபைல் நம்பர் போடவும்');
+    return;
+  }
+
+  let msg = `*புதிய Order - ராணி ஏஜென்சி*%0A%0A` +
+    `*பொருள்:* செங்கல் (Bricks)%0A` +
+    `*Load:* ${qty} Load (1 Load = 3000 pieces)%0A`;
+
+  if (pieces) {
+    msg += `*Pieces:* ${pieces}%0A`;
+  }
+
+  msg += `*பெயர்:* ${name}%0A` +
+    `*மொபைல்:* ${mobile}%0A%0A` +
+    `தயவுசெய்து விலை மற்றும் delivery confirm பண்ணுங்க.`;
+
+  window.open(`https://wa.me/918428029787?text=${msg}`, '_blank');
+}
+
+function sendOrderACC() {
+  const size = document.getElementById('size-acc').value;
+  const pieces = document.getElementById('pieces-acc').value.trim();
+  const name = document.getElementById('name-acc').value.trim();
+  const mobile = document.getElementById('mobile-acc').value.trim();
+
+  if (!name || !mobile) {
+    alert('பெயர் மற்றும் மொபைல் நம்பர் கட்டாயம் பூர்த்தி செய்யவும்');
+    return;
+  }
+  if (mobile.length < 10) {
+    alert('சரியான 10 digit மொபைல் நம்பர் போடவும்');
+    return;
+  }
+  if (!pieces) {
+    alert('Pieces எண்ணிக்கை போடவும்');
+    return;
+  }
+
+  const message = `*புதிய Order - ராணி ஏஜென்சி*%0A%0A` +
+    `*பொருள்:* ஏ.சி. பிளாக் (ACC Block)%0A` +
+    `*Size:* ${size}%0A` +
+    `*Pieces:* ${pieces}%0A` +
+    `*பெயர்:* ${name}%0A` +
+    `*மொபைல்:* ${mobile}%0A%0A` +
+    `தயவுசெய்து விலை மற்றும் delivery confirm பண்ணுங்க.`;
+
+  window.open(`https://wa.me/918428029787?text=${message}`, '_blank');
+}
+
+// Protection
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('keydown', function(e) {
+  if (e.keyCode === 123) { e.preventDefault(); return false; }
+  if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { e.preventDefault(); return false; }
+  if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; }
+  if (e.ctrlKey && e.keyCode === 83) { e.preventDefault(); return false; }
+  if (e.ctrlKey && e.keyCode === 80) { e.preventDefault(); return false; }
+});
+setInterval(function() {
+  console.clear();
+  console.log("%c⚠ Stop!", "color: red; font-size: 50px; font-weight: bold;");
+}, 1500);
+</script>
